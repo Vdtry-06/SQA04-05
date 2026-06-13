@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: chroma-server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chroma-data:/data
+    environment:
+      CHROMA_SERVER_CORS_ALLOW_ORIGINS: "*"
+    restart: unless-stopped

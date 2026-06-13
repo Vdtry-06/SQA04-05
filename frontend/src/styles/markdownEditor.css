@@ -1,0 +1,275 @@
+/* Markdown Editor Styling */
+
+.markdown-editor {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Toolbar */
+.markdown-toolbar {
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  padding: 6px 10px;
+  overflow-x: auto;
+}
+
+.toolbar-buttons {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-tool {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-tool:hover {
+  background: #e9ecef;
+  border-color: #999;
+}
+
+.btn-tool.active {
+  background: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+
+.separator {
+  color: #ddd;
+  margin: 0 2px;
+}
+
+/* Main content */
+.markdown-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  gap: 1px;
+  background: #ddd;
+}
+
+.markdown-editor-panel {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  flex: 1;
+  min-width: 0;
+}
+
+.markdown-editor-panel.half-width {
+  flex: 0 0 50%;
+}
+
+.markdown-editor-panel.full-width {
+  flex: 1;
+}
+
+.markdown-input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: none;
+  color: #333;
+  background: white;
+  overflow: auto;
+}
+
+.markdown-input::placeholder {
+  color: #999;
+}
+
+.markdown-input:focus {
+  outline: none;
+  background: #fafafa;
+}
+
+/* Preview panel */
+.markdown-preview-panel {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-left: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.markdown-preview-header {
+  background: #f8f9fa;
+  padding: 8px 15px;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+  font-size: 13px;
+  color: #666;
+}
+
+.markdown-preview {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Markdown HTML Styling */
+.markdown-preview h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 16px 0 8px 0;
+  border-bottom: 2px solid #0d6efd;
+  padding-bottom: 8px;
+}
+
+.markdown-preview h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 14px 0 7px 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.markdown-preview h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 12px 0 6px 0;
+}
+
+.markdown-preview p {
+  margin: 8px 0;
+}
+
+.markdown-preview strong {
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.markdown-preview em {
+  font-style: italic;
+  color: #666;
+}
+
+.markdown-preview code {
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #e83e8c;
+}
+
+.markdown-preview pre {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 10px 0;
+  border-left: 3px solid #0d6efd;
+}
+
+.markdown-preview pre code {
+  background: none;
+  padding: 0;
+  color: #333;
+}
+
+.markdown-preview blockquote {
+  border-left: 4px solid #0d6efd;
+  padding-left: 15px;
+  margin: 10px 0;
+  color: #666;
+  font-style: italic;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  padding-left: 30px;
+  margin: 10px 0;
+}
+
+.markdown-preview li {
+  margin: 5px 0;
+}
+
+.markdown-preview a {
+  color: #0d6efd;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.markdown-preview a:hover {
+  color: #0b5ed7;
+}
+
+.markdown-preview hr {
+  border: none;
+  border-top: 2px solid #ddd;
+  margin: 20px 0;
+}
+
+.markdown-preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .markdown-main {
+    flex-direction: column;
+  }
+
+  .markdown-editor-panel,
+  .markdown-editor-panel.half-width,
+  .markdown-editor-panel.full-width {
+    flex: 0 0 50%;
+  }
+
+  .markdown-preview-panel {
+    flex: 0 0 50%;
+    border-left: none;
+    border-top: 1px solid #ddd;
+  }
+}
+
+@media (max-width: 768px) {
+  .markdown-main {
+    flex-direction: column;
+  }
+
+  .markdown-editor-panel,
+  .markdown-editor-panel.half-width,
+  .markdown-editor-panel.full-width {
+    flex: 1;
+  }
+
+  .markdown-preview-panel {
+    display: none;
+  }
+
+  .toolbar-buttons {
+    gap: 2px;
+  }
+
+  .btn-tool {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
