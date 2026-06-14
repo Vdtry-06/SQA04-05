@@ -355,5 +355,15 @@ describe('CartService', () => {
 
       expect(result).toEqual({ cart_id: 10, restored_items: 0 });
     });
+
+    test('TC_CART_30: Trả về restored_items = 0 khi order_items là null', async () => {
+      const nullItemsOrder = { ...mockOrder, order_items: null };
+      mockOrderModel.findByIdWithDetails.mockResolvedValue(nullItemsOrder);
+      mockCartModel.findByUserId.mockResolvedValue({ id: 10 });
+
+      const result = await CartService.restoreCartFromOrder(1, 50);
+
+      expect(result).toEqual({ cart_id: 10, restored_items: 0 });
+    });
   });
 });
