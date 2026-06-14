@@ -2,7 +2,7 @@
  * Unit Test — ProductService
  * File gốc  : backend/services/productService.js
  * Test file : backend/__tests__/productService.test.js
- * Người PT  : Cao Thị Thu Hương
+ * Người PT  : Đào Đức Hiếu
  *
  * Rollback  : Toàn bộ test dùng jest.mock() để mock productModel,
  *             không kết nối DB thật => không có dữ liệu nào được
