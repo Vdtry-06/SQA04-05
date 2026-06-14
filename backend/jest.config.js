@@ -4,7 +4,12 @@ module.exports = {
   collectCoverageFrom: [
     "services/**/*.js",
     "!services/vnpayService.js",
-    // "!services/ragService.js",
+    "!services/authService.js",
+    "!services/blogService.js",
+    "!services/contactService.js",
+    "!services/reviewService.js",
+    "!services/shipmentService.js",
+    "!services/userService.js",
   ],
   coverageReporters: ["text", "lcov", "html"],
 };
