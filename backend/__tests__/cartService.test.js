@@ -176,6 +176,12 @@ describe('CartService', () => {
 
       expect(result).toBeNull();
     });
+
+    test('TC_CART_29: Throw lỗi khi DB lỗi trong getCartByUserId', async () => {
+      mockCartModel.findByUserIdWithItems.mockRejectedValue(new Error('Query timeout'));
+
+      await expect(CartService.getCartByUserId(1)).rejects.toThrow('Query timeout');
+    });
   });
 
   // ==========================================================
